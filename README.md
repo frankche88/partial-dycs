@@ -33,5 +33,5 @@ cf set-env partial-dycs AMQ_QUEUE order.procesed
 
 ###Variable optenida de pivotal
 
-cf start process-order-message
+cf start partial-dycs
 
