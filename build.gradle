@@ -28,7 +28,7 @@ run {
   //args += ['db', 'migrate', './src/main/resources/config.yaml']
 }
 
-task myRun(type: JavaExec) {
+task migrate(type: JavaExec) {
   classpath sourceSets.main.runtimeClasspath
   main = "unmsm.dycs.App"
   args "db", "migrate", './src/main/resources/config.yaml'

@@ -12,7 +12,7 @@
 		</id>
 
 
-		<component name="balance"
+		<component name="buyer"
 			class="unmsm.dycs.orders.domain.entity.Buyer">
 
 			<property name="firstName" column="first_name" />

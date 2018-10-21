@@ -8,7 +8,9 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 
 import unmsm.dycs.AppConfiguration;
+import unmsm.dycs.commons.infrastructure.message.MessageService;
 import unmsm.dycs.commons.infrastructure.message.amqp.AMQPConfiguration;
+import unmsm.dycs.commons.infrastructure.message.amqp.AmpqServiceImpl;
 import unmsm.dycs.orders.domain.repository.OrderRepository;
 import unmsm.dycs.orders.infrastructure.application.bundles.HbnBundle;
 import unmsm.dycs.orders.infrastructure.persistence.hibernate.repository.OrderHibernateRepository;
@@ -27,6 +29,8 @@ public class HbnModule extends AbstractModule {
 		bind(SessionFactory.class).toInstance(hbnBundle.getSessionFactory());
 
 		bind(OrderRepository.class).to(OrderHibernateRepository.class);
+		
+		bind(MessageService.class).to(AmpqServiceImpl.class);
 
 	}
 
