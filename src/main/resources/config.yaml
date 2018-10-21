@@ -11,7 +11,7 @@ swagger:
   schemes:
     - http
 amqp:
-  mqUrl: ${AMQ_USERNAME}
+  mqUrl: ${AMQ_URL}
   queue: ${AMQ_QUEUE}
 database:
   # the username

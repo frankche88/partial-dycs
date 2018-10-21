@@ -8,6 +8,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.joda.time.DateTime;
+
 import unmsm.dycs.commons.domain.specification.Specification;
 import unmsm.dycs.commons.infrastructure.persistence.hibernate.repository.BaseHibernateRepository;
 import unmsm.dycs.orders.domain.entity.NullOrder;
@@ -19,6 +21,7 @@ public class OrderHibernateRepository extends BaseHibernateRepository<Order> imp
 	@Override
 	public Order create(Order order) {
 
+		order.setOrderDate(DateTime.now());
 		this.save(order);
 		return order;
 	}

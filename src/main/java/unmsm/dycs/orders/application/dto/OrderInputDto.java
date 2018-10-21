@@ -4,25 +4,14 @@ import java.util.List;
 
 public class OrderInputDto {
 
-	private String firstName;
-	private String lastName;
 	private String address;
 	private String creditCardNumber;
 	private String creditCardAuthCode;
+	
+	private BuyerInputDto buyer;
+	
 	private List<OrderItemInputDto> orderItems;
 	
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
 	public String getAddress() {
 		return address;
 	}
@@ -46,6 +35,12 @@ public class OrderInputDto {
 	}
 	public void setOrderItems(List<OrderItemInputDto> orderItems) {
 		this.orderItems = orderItems;
+	}
+	public BuyerInputDto getBuyer() {
+		return buyer;
+	}
+	public void setBuyer(BuyerInputDto buyer) {
+		this.buyer = buyer;
 	}
 
 }

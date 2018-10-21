@@ -50,7 +50,7 @@ public class AmpqServiceImpl implements MessageService {
 		}
 
 		try {
-			channel.queueDeclare(amqpConfig.getQueue(), false, false, false, null);
+			channel.queueDeclare(amqpConfig.getQueue(), true, false, false, null);
 		} catch (IOException e) {
 			throw new IllegalArgumentException("No se pudo acceder a la cola:" + amqpConfig.getQueue(), e);
 		}
