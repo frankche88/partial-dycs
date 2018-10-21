@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="unmsm.dycs.orders.domain.entity">
+
+	<class name="Order" table="orders">
+
+		<id name="id" column="order_id">
+			<generator class="native" />
+		</id>
+
+
+		<component name="balance"
+			class="unmsm.dycs.orders.domain.entity.Buyer">
+
+			<property name="firstName" column="first_name" />
+
+			<property name="lastName" column="last_name" />
+		</component>
+
+
+
+
+		<property name="address" column="address" />
+
+		<property name="creditCardNumber" column="credit_card" />
+
+		<property name="creditCardAuthCode"
+			column="credit_card_authcode" />
+
+		<property name="orderDate" column="order_date" />
+
+		<set name="orderItems" table="order_items" inverse="true"
+			lazy="true" fetch="select">
+
+			<key>
+				<column name="order_id" not-null="true" />
+			</key>
+
+			<one-to-many
+				class="unmsm.dycs.orders.domain.entity.OrderItem" />
+
+		</set>
+
+	</class>
+</hibernate-mapping>

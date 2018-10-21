@@ -1,4 +1,1 @@
-include 'app-security'
-include 'orders'
-
-rootProject.name = 'unmsm-dycs'
+rootProject.name = 'partial-dycs'
